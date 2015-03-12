@@ -15,6 +15,27 @@ git commit -m "remove file"
 #恢复删除的文件
 git checkout -- file
 ######################################
+远程仓库
+1.创建ssh key
+sh-keygen -t rsa -C "youremail@example.com"
+2.在github中添加ssh key
+sshkey在自己电脑的家目录/.ssh/id_rsa.pub文件中
+3.在github上创建一个git仓库
+4.关联远程仓库
+$ git remote add origin git@github.com:michaelliao/learngit.git
+5.推送
+第一次推送
+$ git push -u origin master
+以后推送
+$ git push origin master
+
+上面是先有本地库，然后有远程库的时候如何关联
+最好的方式是先创建远程库，然后克隆远程库
+1.在github或自己的服务器创建仓库并初始化
+2.$ git clone git@github.com:xxx/xxx.git
+
+
+#####################################
 #创建分支
 首先，我们创建dev分支，然后切换到dev分支：
 $ git checkout -b dev
