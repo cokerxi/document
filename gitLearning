@@ -51,7 +51,9 @@ $ git push origin master
 $ git pull origin  master
 2.推送
 $ git push origin master
-
+默认服务器拒绝推送，在.git/config中添加
+[receive]
+denyCurrentBranch = ignore
 #####################################
 #####################################
 #创建分支
