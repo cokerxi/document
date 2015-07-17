@@ -1,0 +1,9 @@
+# vim 在powerbook上乱码
+ cd /usr/share/vim/
+ sudo cp vimrc vimrc_bak
+ sudo vi vimrc
+ 将以下内容添加
+  set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+  set termencoding=utf-8
+  set encoding=utf-8
+ ／／还有个人根目录可以修改，没试，编辑~/.vimrc文件
