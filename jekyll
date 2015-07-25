@@ -1,0 +1,47 @@
+---
+layout: post
+title:  "在github上使用jekyll的步骤"
+date:   2015-07-23 12:19
+categories: jekyll update
+---
+1.注册github账号
+2.新建一个仓库，名称为xxx.github.io(这里的xxx必须和github用户名完全一样)
+3.git clone git@github.com:xxx/xxx.github.io
+4.进入xxx.github.io的文件夹，可以执行echo "Hello world" > index.html来测试一下，
+    git add --all
+    git commit -m "Initial commit"
+    git push -u origin master
+  然后访问xxx.github.io就可以看到helloworld的主页
+5.使用jekyll模板发布blog
+  使用gem前先改成taobao的源
+  gem sources //查看当前使用的source
+  gem sources -r https://rubygems.org/    //后面的斜杠要带着
+  gem sources -a http://ruby.taobao.org/
+  gem sources -u  //更新源的缓存
+  安装jekyll
+  gem install jekyll
+  jekyll new .   //安装在当前目录，或者也可以是个文件夹名，如myblog
+  jekyll serve   //运行当前目录下的jekyll
+  *发布文章
+  在_posts中创建文件,文件名固定格式，如2011-12-31-new-years-eve-is-awesome.md
+
+… 从下面的截图可以看到：
+[有帮助的截图]({{ site.url }}/assets/screenshot.jpg)
+… 你可以直接 [下载 PDF]({{ site.url }}/assets/mydoc.pdf).
+
+<ul>
+{% for post in site.posts %}
+<li>
+<a href="{{ post.url }}">{{ post.title }}</a>
+</li>
+{% endfor %}
+</ul>
+
+<ul>
+{% for post in site.posts %}
+<li>
+<a href="{{ post.url }}">{{ post.title }}</a>
+{{ post.excerpt }}
+</li>
+{% endfor %}
+</ul>
