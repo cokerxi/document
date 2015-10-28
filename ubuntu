@@ -1,0 +1,41 @@
+#1更改虚拟主机的端口号,修改/etc/apache2/ports.conf
+NameVirtualHost *:80
+Listen 80
+NameVirtualHost *:2013     //下方是我们新添加的端口，保存并退出该文件
+Listen 2013
+
+cd /etc/apache2/sites-available
+sudo cp default newname   /*COPY一份默认配置*/
+sudo vi newname  /*编辑新文档*/
+
+<VirtualHost *:2013>
+        ServerAdmin webmaster@localhost
+ 
+        DocumentRoot /var/www/tcl2013
+        <Directory />
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+        <Directory /var/www/tcl2013/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride None
+                Order allow,deny
+                allow from all
+        </Directory>
+ 
+        ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+        <Directory "/usr/lib/cgi-bin">
+                AllowOverride None
+                Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+                Order allow,deny
+                Allow from all
+        </Directory>
+ 
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+ 
+        # Possible values include: debug, info, notice, warn, error, crit,
+        # alert, emerg.
+        LogLevel warn
+ 
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
