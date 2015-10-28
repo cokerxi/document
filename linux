@@ -1,3 +1,4 @@
+#
 # vim 在powerbook上乱码
  cd /usr/share/vim/
  sudo cp vimrc vimrc_bak
