@@ -1,3 +1,8 @@
+
+#打印不换行
+后面接 terminator:"" 参数
+ print("\(ary2[i,j]) ", terminator:"")
+ 
 #Swift 语言中 类型后面的 ？和 ！ 有什么作用？  
 在实际用Swift写CocoaTouch时，发现下面这样写才可以通过编译
 var amiteLbl :UILabel?
