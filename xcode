@@ -1,0 +1,4 @@
+#Failed to instantiate the default view controller for UIMainStoryboardFile 'MainStoryboard' - 
+perhaps the designated entry point is not set?
+原因分析：在StoryBoard中没有一个view controller设置了Initial Scene。
+解决方案：在Storyboard中，选择一个view conroller打开属性面板，选中 Is initial view controller的复选框
