@@ -1,3 +1,8 @@
+#firefox改用国际账号同步
+打开用户主目录，ctrl+h显示隐藏文件，把.friefox文件夹删除，
+先在firefox国内网站下载安装包，解压缩，tar -jxvf *.tar.bz2，运行解压包里的firefox主程序，登陆账号，关闭firefox，把解压包删除
+，再次运行主机上自带的firefox就可以了
+
 #1更改虚拟主机的端口号,修改/etc/apache2/ports.conf
 NameVirtualHost *:80
 Listen 80
