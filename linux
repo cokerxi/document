@@ -1,4 +1,4 @@
-#1 vim 在powerbook上乱码
+# vim 在powerbook上乱码
  cd /usr/share/vim/
  sudo cp vimrc vimrc_bak
  sudo vi vimrc
@@ -7,7 +7,13 @@
   set termencoding=utf-8
   set encoding=utf-8
  ／／还有个人根目录可以修改，没试，编辑~/.vimrc文件
-#2 重新命名文件夹
+
+# 重新命名文件夹
 mv A B
-#3 查找文件
+
+# 查找文件
 locate php.ini
+
+#linux下查看历史命令
+history,  
+运行第29条，!29
