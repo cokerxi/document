@@ -1,0 +1,5 @@
+#输入"sudo purge”就可以释放大约 500MB 的内存空间
+#安全性打开任何来源的软件
+sudo spctl --master-disable
+#ctrl+cmd+d翻译
+#复制文件的时候出现选项后按option可以跳过相同的文件
