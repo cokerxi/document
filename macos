@@ -7,3 +7,10 @@
   set termencoding=utf-8
   set encoding=utf-8
  ／／还有个人根目录可以修改，没试，编辑~/.vimrc文件
+# 自定义alias
+ 编辑~/.bashrc文件
+ 例如alias ll='ls -l'
+ 保存文件后，source ~/.bashrc
+ 如果还不行的话，说明没有~/.bash_profile文件，先创建文件~/.bash_profile
+ 在里面加入一行：
+ source ~/.bashrc
