@@ -3,3 +3,11 @@
   sudo spctl --master-disable
 # ctrl+cmd+d翻译
 # 复制文件的时候出现选项后按option可以跳过相同的文件
+# 文本编辑
+  Control-A 移至行或段落的开头
+# 在浏览器中：
+  Control-Tab 转向下一个标签页　　
+  Command-L 光标直接跳至地址栏
+# 移动焦点
+  Control-F2 移动到菜单
+  Control-F8 移动到状态菜单，如wifi，输入法，日期
