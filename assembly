@@ -1,3 +1,5 @@
+8086模式：段地址不能超过64k。
+         不允许将数值直接送入段寄存器，可通过ax
 cs：代码段寄存器，code segment 联合ip作为cpu指向当前正在执行的那条指令所使用
 ds：数据段寄存器，data segment 
 ss：堆栈段寄存器，stack segment 联合sp定义一个堆栈
