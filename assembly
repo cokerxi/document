@@ -5,3 +5,16 @@ ds：数据段寄存器，data segment
 ss：堆栈段寄存器，stack segment 联合sp定义一个堆栈
 es：附加段寄存器，extra segment 
 bx：段地址的偏移地址
+    [bx]默认代表ds：[bx]
+编写测试程序：
+         1.在dos下运行edit，保存为1.asm
+         2。编译 masm c:\1;(省略了后缀名)
+         3.连接 link 1;
+         4.跟踪程序，debug 1.exe
+                  -r 查看各寄存器情况
+                  -u 查看指令
+                  -t 逐条执行指令并查看结果
+                  -p 遇到int 21，
+                     遇到循环，如 loop 0012，可自动完成循环
+                  -g -g 0012， 执行完cs：0012前的所有命令
+         
