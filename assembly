@@ -7,6 +7,7 @@ ss：堆栈段寄存器，stack segment 联合sp定义一个堆栈
 es：附加段寄存器，extra segment 
 bx：段地址的偏移地址
     [bx]默认代表ds：[bx]
+si和di更能跟bx相似，不能分为两个8位寄存器来使用
     
 编写测试程序：
          1.在dos下运行edit，保存为1.asm
