@@ -41,3 +41,9 @@ p169
 访问结构体中的数据，用bx定位整个结构体，用idata确定某一个数据项，用si定位数组项中的每个元素。书写方式如：[bx].idata,[bx].idata[si]
 div 指令，被除数如果是32位，dx存放高16位，ax存放低16位，
 结果：如果除数是8位，al存商，ah存余数，如果除数16位，ax存商，dx存余数
+
+p172
+定义200个字节的栈段
+stack segment
+db 200 dup(0)
+segment ends
