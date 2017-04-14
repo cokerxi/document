@@ -22,4 +22,14 @@ mac无法完全休眠
     2. 我关掉了唤醒以提供Wi-Fi。不知道打开这个有没有影响，下次再测试一下打开选项并不关Wi-Fi的情况是否有唤醒。
     谢谢！
     关闭wifi应该管用！！！
-    
+# macos 手动挂在ntfs分区的u盘或移动硬盘
+   1.先用mount命令查看移动硬盘的分区情况
+   /dev/disk3s1 on /Volumes/新加卷 (ntfs, local, nodev, nosuid, read-only, noowners)
+   2.卸载移动硬盘
+   sudo umount /Volumes/新加卷
+   3.在/Volumes/下新建一个文件夹udisk
+   sudo mkdir /Volumes/udisk
+   4.挂载移动硬盘为可读写
+   sudo mount -t ntfs -o rw,auto,nobrowse /dev/disk3s1 /Volumes/udisk
+   5.将移动硬盘的快捷方式放到桌面
+   sudo ln -s /Volumes/udisk/ ~/Desktop/udisk
