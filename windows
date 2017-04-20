@@ -1,12 +1,15 @@
 #xp系统下在桌面上建一个锁屏的快捷键
 rundll32.exe user32.dll,LockWorkStation 鼠标右键创建一个快捷方式 输入这个命令就可以
-#xp下将caps键变为ctrl键
-在使用emacs 或Total command时，用的CTRL的机会非常多，在双手不离键盘的条件下，按带有CTRL的组合键非常不方便，
-因此，如果将不常用的cap lock 键与Ctrl键交换，无疑是一个好主意。
-let‘s begin！
+#xp下将caps键变为右ctrl键
+
 在运行中，输入regedit，展开注册表到HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout ， 
 新建Scancode Map，类型为二进制型，然后编辑它的值，输入：
 0000: 00 00 00 00 00 00 00 00
-0008: 03 00 00 00 3A 00 1D 00
-0010: 1D 00 3A 00 00 00 00 00
+0008: 03 00 00 00 1d 00 3a 00
+0010: 3a 00 1d e0 00 00 00 00
 注销windows ，然后重新进入系统后修改即生效
+
+我们修改注册表的相关键值，将以下内容复制到文本中，然后重命名1.reg，双击即可。接着我们注销重进window，即可顺利使用。
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+"Scancode Map"=hex:00,00,00,00,00,00,00,00,03,00,00,00,1d,00,3a,00,3a,00,1d,e0,00,00,00,00
