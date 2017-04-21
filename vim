@@ -1,3 +1,12 @@
+#在mac下配置配色方案
+   ls /usr/share/vim/vim74/colors  //路径中的vim74因版本不同会有所不同，此命令查看配色方案
+   cd        //进入家目录
+   vim .vimrc     //创建配置文件
+   内容如下
+   set nu
+   colorscheme darkblue
+   syntax on
+   
 #另存文件 :w 1.html
 #打开文件 :e 1.html
 
