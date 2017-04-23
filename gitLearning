@@ -1,9 +1,24 @@
 ######################################
+######################################
 从git克隆到本机，远程同步的步骤
 1.在github创建仓库
 2.将本机的ssh key 添加到github
-        1.在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有          id_rsa和id_rsa.pub这两个文件
-######################################
+        1.在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件
+        2.如果没有，创建ssh key 
+         $ ssh-keygen -t rsa -C "youremail@example.com"
+         主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件
+         id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人
+        3.登陆GitHub，打开“Account settings”，“SSH Keys”页面
+         点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容
+3.从git克隆到本地
+        $ git clone git@github.com:cokerxi/document.git
+4.对克隆到本地的文件进行增删改查以后推送到github
+        第一次推送
+        $ git push -u origin master
+        以后推送
+        $ git push origin master
+5.如果在别的电脑上或者直接在github上修改文件以后，需要现在本机更新一下
+	$ git pull origin  master
 ######################################
 我自己定义的别名
 git config --global alias.a add
