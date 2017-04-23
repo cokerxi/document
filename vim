@@ -6,6 +6,10 @@
    set nu
    colorscheme darkblue
    syntax on
+
+#显示关闭行号
+set nu
+set nonu
    
 #另存文件 :w 1.html
 #打开文件 :e 1.html
@@ -16,8 +20,9 @@
   下一个单词首 w
   
   上下左右，hjkl
-  第一行 1G
+  第一行 1G,第n行，nG
   最后一行 G
+  
 #删除
   x删除当前光标处内容
   X向前删除一个字母
