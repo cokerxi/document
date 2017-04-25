@@ -15,7 +15,7 @@
  在里面加入一行：
  source ~/.bashrc
 
-mac无法完全休眠
+# mac无法完全休眠
     用终端命令pmset -g 查看了参数情况，发现有一条信息:sleep prevented by addressbooksourcesync 
     经过两天折腾测试终于好了，终端没有出现sleep prevented。。。昨天断电、关闭Wi-Fi，然后一晚都没有唤醒，100%电量。以下是一些经验：
     1. 同步导致的问题还是要从同步上面找，我删除了以前的同步数据及账户，然后重新建立账号同步，现在没有问题了。不知道删除后是否仍有这个问题。
@@ -33,3 +33,6 @@ mac无法完全休眠
    sudo mount -t ntfs -o rw,auto,nobrowse /dev/disk3s1 /Volumes/udisk
    5.将移动硬盘的快捷方式放到桌面
    sudo ln -s /Volumes/udisk/ ~/Desktop/udisk
+# 与windows共享文件
+   1.在windows中设置好共享的文件夹
+   2.在mac下的finder下用快捷键cmd+k，输入smb://192.168.7.5链接
