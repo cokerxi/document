@@ -1,7 +1,30 @@
-#vsftpd
+apt-get update
+apt-get install apache2
+apache2 -v
+apt-get install php5
+php5 -v
+apt-get install mysql-server
+apt-get install php5-mysql
+service mysql restart
+service apache2 restart
+apt-get install php5-gd curl libcurl3 libcurl3-dev php5-curl
+service apache2 restart
+apt-get install phpmyadmin
 apt-get install vsftpd
+service vsftpd restart
+useradd -d /var/www/html -s /bin/bash uftp
+passwd uftp
 cp /etc/vsftpd.conf /etc/vsftpd.conf_bak
 vi /etc/vsftpd.conf
   write_enable=YES
 service vsftpd restart
-阿里云vsftpd不能连接，将ftp客户端改为主动链接，默认为passive（被动连接）
+  阿里云vsftpd不能连接，将ftp客户端改为主动链接，默认为passive（被动连接）
+cd /var/www/html/
+wget https://cn.wordpress.org/wordpress-4.7.4-zh_CN.zip
+apt-get install unzip
+unzip wordpress-4.7.4-zh_CN.zip
+chmod -R 777 wordpress
+  进入phpmyadmin，新建数据库wordpress,然后开始安装wordpress
+
+
+
