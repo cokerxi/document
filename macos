@@ -1,3 +1,7 @@
+# mac下游戏
+ 1.打开终端，输入emacs
+ 2.esc+x，进入编辑模式，输入：tetris，回车
+ 3.除了这个Tetris，--->    /usr/share/emacs/22.1/lisp/play   目录下还有很多游戏。
 # vim 在powerbook上乱码
  cd /usr/share/vim/
  sudo cp vimrc vimrc_bak
