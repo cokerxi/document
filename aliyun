@@ -25,6 +25,7 @@ apt-get install unzip
 unzip wordpress-4.7.4-zh_CN.zip
 chmod -R 777 wordpress
   进入phpmyadmin，新建数据库wordpress,然后开始安装wordpress
-
+  
+unzip -d ./joomla Joomla_3.7.3-Stable-Full_Package.zip 
 
 
