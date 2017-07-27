@@ -1,3 +1,4 @@
+#ut14.04-lamp
 
 apt-get update
 apt-get install apache2
@@ -11,6 +12,7 @@ service apache2 restart
 apt-get install php5-gd curl libcurl3 libcurl3-dev php5-curl
 service apache2 restart
 apt-get install phpmyadmin
+
 apt-get install vsftpd
 service vsftpd restart
 useradd -d /var/www/html -s /bin/bash uftp
@@ -20,6 +22,7 @@ vi /etc/vsftpd.conf
   write_enable=YES
 service vsftpd restart
   阿里云vsftpd不能连接，将ftp客户端改为主动链接，默认为passive（被动连接）
+  
 cd /var/www/html/
 wget https://cn.wordpress.org/wordpress-4.7.4-zh_CN.zip
 apt-get install unzip
@@ -29,4 +32,6 @@ chmod -R 777 wordpress
   
 unzip -d ./joomla Joomla_3.7.3-Stable-Full_Package.zip 
 
-
+#ubuntu 16.04 php7.0源里面安装的怎么往里面添加模块?
+apt-cache search php7.0
+没有模块可以用apt-get安装.例如 apt-get install php7.0-zip
