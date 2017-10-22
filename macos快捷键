@@ -11,3 +11,6 @@
 # 移动焦点
   Control-F2 移动到菜单
   Control-F8 移动到状态菜单，如wifi，输入法，日期
+# control + command + Z 打开未读QQ消息
+# control + command + space 打开emoji表情
+# control + command + 1-5 整理finder中文件
