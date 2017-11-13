@@ -1,7 +1,10 @@
+#从 Windows 访问 Mac
+开始——运行（Win＋R），输入：\\Mac名称或IP地址 回车即可。这个IP地址可以在“系统偏好设置——共享”那里找到。请求的用户名和密码即Mac的用户名和密码。
+看完之后，不知道各位是否已经掌握了相关的设置方法。如果你已熟练掌握，请把它普及开，为更多的朋友提供便利。
+
 #xp系统下在桌面上建一个锁屏的快捷键
 rundll32.exe user32.dll,LockWorkStation 鼠标右键创建一个快捷方式 输入这个命令就可以
 #xp下将caps键变为右ctrl键
-
 在运行中，输入regedit，展开注册表到HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout ， 
 新建Scancode Map，类型为二进制型，然后编辑它的值，输入：
 0000: 00 00 00 00 00 00 00 00
