@@ -9,6 +9,18 @@ git在本机上的别名配置
 2.增加并确认文件可以用一行命令
 	$ git add 111 && gcom
 ######################################
+我自己定义的别名
+git config --global alias.a add
+git config --global alias.b branch
+git config --global alias.c checkout
+git config --global alias.l log
+git config --global alias.m commit
+git config --global alias.p pull
+git config --global alias.ps push
+git config --global alias.s status
+git config --global alias.
+git config --global alias.
+######################################
 从git克隆到本机，远程同步的步骤
 ######################################
 1.在github创建仓库
@@ -30,22 +42,11 @@ git在本机上的别名配置
 5.如果在别的电脑上或者直接在github上修改文件以后，需要现在本机更新一下
 	$ git pull origin  master
 ######################################
-我自己定义的别名
-git config --global alias.a add
-git config --global alias.b branch
-git config --global alias.c checkout
-git config --global alias.l log
-git config --global alias.m commit
-git config --global alias.p pull
-git config --global alias.ps push
-git config --global alias.s status
-git config --global alias.
-git config --global alias.
-#####################################
 #查看工作区与版本库的区别
 git diff HEAD -- file
 ######################################
-#撤销修改
+撤销修改
+######################################
 场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。
 场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。
 场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。
