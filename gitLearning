@@ -1,4 +1,20 @@
 ######################################
+git全局变量
+######################################
+1.查看已有的配置 
+git config --list
+2. Git全局配置的用户名邮箱配置
+  git config --global user.name “github’s Name”
+  git config --global user.email “github@xx.com”
+  git config --list //然后查看自己的配置
+3. Git单个仓库的用户名邮箱配置
+  git config user.name “gitlab’s Name”
+  git config user.email “gitlab@xx.com”
+  git config --list
+4.移除某个全局配置 
+  git config --global --unset <option>  
+  例如移除 上面的配置  git  config --global --unset  user.name
+######################################
 git在本机上的别名配置
 ######################################
 1.$ vi .bash_profile
@@ -8,13 +24,12 @@ git在本机上的别名配置
         alias gcom='git commit -m "update"'
 2.增加并确认文件可以用一行命令
 	$ git add 111 && gcom
-######################################
 我自己定义的别名
 git config --global alias.a add
 git config --global alias.b branch
-git config --global alias.c checkout
+git config --global alias.ck checkout
 git config --global alias.l log
-git config --global alias.m commit
+git config --global alias.c commit
 git config --global alias.p pull
 git config --global alias.ps push
 git config --global alias.s status
