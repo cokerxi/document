@@ -102,8 +102,8 @@ $ git push origin master
 [receive]
 denyCurrentBranch = ignore
 #####################################
+创建与合并分支
 #####################################
-#创建分支
 首先，我们创建dev分支，然后切换到dev分支：
 $ git checkout -b dev
 Switched to a new branch 'dev'
@@ -111,16 +111,16 @@ git checkout命令加上-b参数表示创建并切换，相当于以下两条命
 $ git branch dev
 $ git checkout dev
 Switched to branch 'dev'
-######################################
-#查看当前分支
+
+查看当前分支
 $ git branch
-######################################
-#合并分支
+
+合并分支
 git merge命令用于合并指定分支到当前分支
 $ git merge dev
 合并完成后，就可以放心地删除dev分支了
 $ git branch -d dev
-######################################
+
 Git鼓励大量使用分支：
 查看分支：git branch
 创建分支：git branch <name>
