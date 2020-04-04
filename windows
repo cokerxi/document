@@ -16,3 +16,8 @@ rundll32.exe user32.dll,LockWorkStation 鼠标右键创建一个快捷方式 输
 Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
 "Scancode Map"=hex:00,00,00,00,00,00,00,00,03,00,00,00,1d,00,3a,00,3a,00,1d,e0,00,00,00,00
+
+####################################################
+win10查看唤醒电脑的设备
+####################################################
+用命令提示行输入“powercfg /devicequery wake_armed”查看唤醒设备
