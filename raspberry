@@ -1,11 +1,11 @@
 #查看debian版本
     cat /etc/debian_version
 #更新清华源
-    编辑 `/etc/apt/sources.list` 文件，删除原文件所有内容，用以下内容取代：
+    编辑 `sudo vi /etc/apt/sources.list` 文件，删除原文件所有内容，用以下内容取代：
     deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib rpi
     deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib rpi
 
-    编辑 `/etc/apt/sources.list.d/raspi.list` 文件，删除原文件所有内容，用以下内容取代：
+    编辑 `sudo vi /etc/apt/sources.list.d/raspi.list` 文件，删除原文件所有内容，用以下内容取代：
     deb http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/ buster main ui
     
     注意：网址末尾的raspbian重复两次是必须的。因为 Raspbian 的仓库中除了APT软件源还包含其他代码。APT软件源不在仓库的根目录，而在raspbian/子目录下。
@@ -54,3 +54,6 @@
     sudo /etc/init.d/smbd restart
     exit 0
     
+    #samba正确的卸载方式,需要执行两个命令：
+    sudo apt-get remove samba 
+    sudo apt autoremove
