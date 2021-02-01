@@ -10,3 +10,36 @@
     
     注意：网址末尾的raspbian重复两次是必须的。因为 Raspbian 的仓库中除了APT软件源还包含其他代码。APT软件源不在仓库的根目录，而在raspbian/子目录下。
     编辑镜像站后，请使用sudo apt-get update命令，更新软件源列表，同时检查您的编辑是否正确。
+#安装samba 和 samba-common-bin
+    sudo apt-get update
+    sudo apt-get install samba samba-common-bin
+    
+    sudo vi /etc/samba/smb.conf
+    shift-g 跳到最后一行，加入如下语句：
+    
+    # 在末尾加入如下内容
+    # 分享名称
+    [MyNAS]
+    # 说明信息
+    comment = NAS Storage
+    # 可以访问的用户
+    valid users = pi,root
+    # 共享文件的路径,raspberry pi 会自动将连接到其上的外接存储设备挂载到/media/pi/目录下。
+    path = /media/pi/
+    # 可被其他人看到资源名称（非内容）
+    browseable = yes
+    # 可写
+    writable = yes
+    # 新建文件的权限为 664
+    create mask = 0664
+    # 新建目录的权限为 775
+    directory mask = 0775
+    
+    测试配置文件是否有错误，根据提示做相应修改
+    testparm
+    
+    添加登陆账户并创建密码，必须是 linux 已存在的用户
+    sudo smbpasswd -a pi
+
+    重启 samba 服务
+    sudo /etc/init.d/samba restart
