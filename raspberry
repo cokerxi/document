@@ -57,3 +57,4 @@
     #samba正确的卸载方式,需要执行两个命令：
     sudo apt-get remove samba 
     sudo apt autoremove
+    #可在手机上使用VLC播放器播放samba服务上的码流，点击网络，连接到服务器，将ip地址，用户名密码填入即可
