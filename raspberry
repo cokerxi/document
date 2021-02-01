@@ -42,4 +42,15 @@
     sudo smbpasswd -a pi
 
     重启 samba 服务
-    sudo /etc/init.d/samba restart
+    sudo /etc/init.d/smbd restart
+    
+    设置开机自启动，编辑/etc/rc.local
+    
+    # Print the IP address
+    _IP=$(hostname -I) || true
+    if [ "$_IP" ]; then
+      printf "My IP address is %s\n" "$_IP"
+    fi
+    sudo /etc/init.d/smbd restart
+    exit 0
+    
