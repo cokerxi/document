@@ -55,6 +55,12 @@
     exit 0
     
     #samba正确的卸载方式,需要执行两个命令：
-    sudo apt-get remove samba 
-    sudo apt autoremove
+        sudo apt-get remove samba 
+        sudo apt autoremove
     #可在手机上使用VLC播放器播放samba服务上的码流，点击网络，连接到服务器，将ip地址，用户名密码填入即可
+    
+#树莓派错误:仓库将其‘Suite‘值从‘testing‘修改到了‘oldstable‘ 解决办法
+    sudo apt update
+    出现很多提示输入y
+    然后输入sudo apt-get update将不会出现问题
+        
