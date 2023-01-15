@@ -1,0 +1,4 @@
+#如何打开rpa文件
+下载https://github.com/Lattyware/unrpa
+copy unpra的所有文件到python目录下
+py -3 -m unrpa -mp "d:\11" "d:\11\movies.rpa"
