@@ -1,5 +1,5 @@
-#20230126
- 修改mac终端命令行的前缀
+#修改mac终端命令行的前缀 20230126
+ 
  方法：修改PS1变量
  需要修改/etc/bashrc，但新版本的macOS Catalina 命令行终端默认使用的是/bin/zsh，不再是之前的bash，则需要修改/etc/zshrc
  先注释掉PS1 #PS1='\h:\W \u\$ '
