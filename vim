@@ -6,9 +6,8 @@
    内容如下
    colorscheme darkblue
    syntax on
-   "显示关闭行号
+   "显示关闭行号 set nonu
    set nu
-   "set nonu
    "继承前一行的缩进方式，适用于多行注释
    set cindent
 
