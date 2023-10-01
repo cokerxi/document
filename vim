@@ -1,19 +1,30 @@
+#2 在mac下配置配色方案
+   ls /usr/share/vim/vim74/colors  //路径中的vim74因版本不同会有所不同，此命令查看配色方案
+   cd        //进入家目录
+   vim .vimrc     //创建配置文件
+   
+   内容如下
+   colorscheme darkblue
+   syntax on
+   "显示关闭行号
+   set nu
+   "set nonu
+   "继承前一行的缩进方式，适用于多行注释
+   set cindent
+
 #1 vim配置
    " 不指定文件名打开新文件时不显示版本信息和乌干达儿童的提示
 set shortmess+=I
 
-" 行号显示
-set nu
 
-" 显示小括号、大括号等的匹配
+"显示小括号、大括号等的匹配
 set showmatch
 
 "设置Tab长度为4空格
 set tabstop=4
 "设置自动缩进长度为4空格
 set shiftwidth=4
-"继承前一行的缩进方式，适用于多行注释
-set cindent
+
 
 "设置满79行自动换行，符合gnu编码规范，并自动增加注释符
 set textwidth=79
@@ -80,19 +91,6 @@ function GenerateFuncComment()
   "定位到Function Name：行尾
   normal! jj$
 endfunction
-
-#2 在mac下配置配色方案
-   ls /usr/share/vim/vim74/colors  //路径中的vim74因版本不同会有所不同，此命令查看配色方案
-   cd        //进入家目录
-   vim .vimrc     //创建配置文件
-   内容如下
-   set nu
-   colorscheme darkblue
-   syntax on
-
-#3 显示关闭行号
-set nu
-set nonu
    
 #4 另存文件 :w 1.html
 #5 打开文件 :e 1.html
