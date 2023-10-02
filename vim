@@ -1,4 +1,5 @@
-#2 在mac下配置配色方案
+#1 vim配置方案 
+   在mac下配置配色方案
    ls /usr/share/vim/vim74/colors  //路径中的vim74因版本不同会有所不同，此命令查看配色方案
    cd        //进入家目录
    vim .vimrc     //创建配置文件
@@ -17,7 +18,7 @@
    imap { {}<LEFT>
    imap ( ()<LEFT>
 
-#1 vim配置
+#2 vim其他配置
    " 不指定文件名打开新文件时不显示版本信息和乌干达儿童的提示
 set shortmess+=I
 
