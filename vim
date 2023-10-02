@@ -4,12 +4,18 @@
    vim .vimrc     //创建配置文件
    
    内容如下
+   "显示行号  关闭行号 set nonu
+   set nu                              
+   "配色方案ls /usr/share/vim/vim74/colors  //路径中的vim74因版本不同会有所不同，此命令查看配色方案
    colorscheme darkblue
+   "语法高亮
    syntax on
-   "显示关闭行号 set nonu
-   set nu
-   "继承前一行的缩进方式，适用于多行注释
+   "cindent是特别针对 C语言语法自动缩进
    set cindent
+   "输入一个左括号，相当于输入完整的括号再将光标向左移动一个字符
+   imap [ []<LEFT>
+   imap { {}<LEFT>
+   imap ( ()<LEFT>
 
 #1 vim配置
    " 不指定文件名打开新文件时不显示版本信息和乌干达儿童的提示
