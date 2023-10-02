@@ -1,4 +1,4 @@
-#1 vim配置方案 
+#1 vim配置方案  
    在mac下配置配色方案
    ls /usr/share/vim/vim74/colors  //路径中的vim74因版本不同会有所不同，此命令查看配色方案
    cd        //进入家目录
