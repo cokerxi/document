@@ -8,7 +8,7 @@
    "显示行号  关闭行号 set nonu
    set nu                              
    "配色方案ls /usr/share/vim/vim74/colors  //路径中的vim74因版本不同会有所不同，此命令查看配色方案
-   colorscheme darkblue
+   "colorscheme darkblue
    "语法高亮
    syntax on
    "cindent是特别针对 C语言语法自动缩进
