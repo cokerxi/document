@@ -1,4 +1,7 @@
-#如何打开rpa文件
+#1如何打开rpa文件
 下载https://github.com/Lattyware/unrpa
 copy unpra的所有文件到python目录下
 py -3 -m unrpa -mp "d:\11" "d:\11\movies.rpa"
+
+#2 steam错误代码：-101
+  更换DNS服务器，例如使用‌Google DNS（8.8.8.8 和 8.8.4.4）或‌Cloudflare DNS（1.1.1.1），以改善网络连接
