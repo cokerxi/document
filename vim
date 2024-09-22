@@ -99,6 +99,8 @@ function GenerateFuncComment()
 endfunction
    
 #4 另存文件 :w 1.html
+   保存文件是用了大写X会加密文件，用:set key=空格 回车 去掉密码
+   :x保存并退出
 #5 打开文件 :e 1.html
 
 #6 光标移动
