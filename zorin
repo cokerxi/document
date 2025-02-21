@@ -1,0 +1,7 @@
+#2025年02月22日00:10:10
+1.Zorin系统的最新版本是Zorin OS 17.2。
+2.在这个系统下，如何把 CAPS lock 改为 Ctrl 键？
+  1. 检查是否使用GNOME桌面环境，在终端输入echo $XDG_CURRENT_DESKTOP。
+  2. 安装GNOME Tweaks，在终端执行sudo apt install gnome-tweaks。
+  3. 执行gnome-tweaks打开GNOME Tweaks，导航至“键盘和鼠标”>“其他布局选项”>“Caps Lock行为”，选择“Make Caps Lock an additional Ctrl”。
+3.查看电脑生产日期sudo dmidecode -s bios-release-date
