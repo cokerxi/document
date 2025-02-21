@@ -1,3 +1,29 @@
+#2025年2月22日
+使用 WSL（Windows Subsystem for Linux）
+
+‌特点‌：原生集成、性能高、资源占用极低
+操作步骤：
+
+    ‌启用 WSL 功能‌（需管理员权限）： 
+    命令行：wsl --install
+
+        若提示错误，手动启用：
+    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+    重启电脑完成配置。
+
+    ‌安装最小化 Linux 发行版‌：
+        推荐 ‌Alpine Linux‌（仅约 5MB）：
+
+        powershell
+        命令行：wsl --install -d Alpine
+        或使用 ‌Debian‌ 极简版（约 50MB）：
+        命令行：wsl --install -d Debian
+
+    ‌启动 Linux 环境‌：
+        在开始菜单搜索安装的发行版（如 "Alpine"）并运行，首次启动会提示设置用户名/密码。
+
+
 #从 Windows 访问 Mac
 开始——运行（Win＋R），输入：\\Mac名称或IP地址 回车即可。这个IP地址可以在“系统偏好设置——共享”那里找到。请求的用户名和密码即Mac的用户名和密码。
 看完之后，不知道各位是否已经掌握了相关的设置方法。如果你已熟练掌握，请把它普及开，为更多的朋友提供便利。
