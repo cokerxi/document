@@ -20,6 +20,7 @@
 
     ‌启动 Linux 环境‌：
         在开始菜单搜索安装的发行版（如 "Alpine"）并运行，首次启动会提示设置用户名/密码。
+##############################################################################################
 2
 .# 查看已安装的发行版
     wsl --list -v
@@ -44,6 +45,35 @@ wsl --install -d Debian
 ‌GUI 支持‌ 	需手动配置 X Server（如 VcXsrv） 	          直接使用 WSLg（Windows 11 内置支持）
 ‌开发环境‌ 	安装基础编译工具：apk add build-base 	          一键安装完整开发套件：apt install build-essential
 ‌文件互访‌ 	直接访问 /mnt/c/Users 	                      同 Alpine
+##########################################################################################################
+3.
+用户输入的命令是wsl --install -d Alpine，但系统返回了错误，说明Alpine不在有效的分发版列表中。
+用户可以通过运行wsl --list --online来查看所有有效的分发版名称。如果Alpine不在其中，那么直接使用--install -d命令是行不通的
+手动安装Alpine WSL‌
+
+如果列表中没有Alpine，需通过以下步骤手动安装：
+
+powershellCopy Code
+# 下载Alpine WSL根文件系统（rootfs）
+curl -o alpine-rootfs.tar.gz https://dl-cdn.alpinelinux.org/alpine/v3.18/releases/x86_64/alpine-minirootfs-3.18.0-x86_64.tar.gz
+
+# 创建安装目录
+mkdir C:\wsl\alpine
+
+# 导入Alpine到WSL
+wsl --import Alpine C:\wsl\alpine C:\Users\pc\alpine-rootfs.tar.gz
+
+# 启动Alpine
+wsl -d Alpine
+
+3️⃣ ‌验证安装‌
+
+在Alpine终端中运行：
+
+bashCopy Code
+cat /etc/alpine-release
+
+成功输出类似：3.18.0
 
 #################################################################################################################################
 #从 Windows 访问 Mac
