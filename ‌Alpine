@@ -1,0 +1,97 @@
+Alpine Linux 安装 SSH 服务指南（2025 最新版）‌
+
+‌适用版本：Alpine 3.20 | 当前时间：2025-02-22‌
+以下是为 Alpine Linux 安装 SSH 服务的完整流程，支持容器、物理机及虚拟机场景。
+‌一、安装 OpenSSH 服务‌
+1. 更新仓库并安装
+
+bashCopy Code
+apk update              # 同步最新软件源
+apk add openssh         # 安装 SSH 服务端和客户端
+apk add openssh-sftp-server  # 可选：启用 SFTP 支持
+
+2. 生成 SSH 主机密钥（首次安装必选）
+
+bashCopy Code
+ssh-keygen -A          # 自动生成 RSA/ECDSA/Ed25519 密钥
+
+‌二、配置 SSH 服务‌
+1. 基础配置
+
+编辑 /etc/ssh/sshd_config，确保以下关键参数：
+
+bashCopy Code
+PermitRootLogin yes           # 允许 root 登录（生产环境建议设为 no）
+PasswordAuthentication yes   # 启用密码验证（临时调试用）
+ListenAddress 0.0.0.0        # 监听所有 IP（容器场景需开放）
+
+2. 创建持久化配置
+
+bashCopy Code
+rc-update add sshd       # 加入开机自启
+lbu include /etc/ssh     # 将 SSH 配置纳入持久化存储
+lbu commit -d            # 提交当前系统状态
+
+‌三、启动服务与验证‌
+
+bashCopy Code
+rc-service sshd start    # 启动 SSH 服务
+rc-service sshd status   # 检查运行状态
+ss -tulpn | grep 22      # 确认 22 端口监听
+
+‌四、防火墙放行（若启用）‌
+
+bashCopy Code
+apk add nftables
+nft add rule inet filter input tcp dport 22 accept  # 开放 22 端口
+nft list ruleset > /etc/nftables.conf              # 保存规则
+rc-service nftables restart
+
+‌五、容器环境专用配置‌
+1. Dockerfile 示例
+
+DockerfileCopy Code
+FROM alpine:3.20
+RUN apk add --no-cache openssh && \
+    ssh-keygen -A && \
+    echo "root:alpine" | chpasswd  # 设置 root 密码（仅测试用）
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"]       # 前台运行 SSH
+
+2. 调试命令
+
+bashCopy Code
+docker run -d -p 2222:22 my-alpine-ssh  # 映射容器 22 端口到宿主机 2222
+ssh root@localhost -p 2222             # 连接测试
+
+‌六、常见问题解决‌
+1. ‌SSH 连接超时‌
+
+    ‌检查项‌：
+        服务是否运行：rc-service sshd status
+        防火墙规则：nft list ruleset
+        容器端口映射：docker ps --format "table {{.Ports}}"
+
+2. ‌密码认证失败‌
+
+    ‌修复步骤‌：
+
+    bashCopy Code
+    passwd root                # 重置密码
+    sed -i 's/#PermitRootLogin/PermitRootLogin/' /etc/ssh/sshd_config  # 允许 root 登录
+    rc-service sshd restart
+
+3. ‌密钥登录问题‌
+
+    ‌配置流程‌：
+
+    bashCopy Code
+    mkdir ~/.ssh && chmod 700 ~/.ssh   # 客户端创建密钥对
+    ssh-copy-id -i ~/.ssh/id_rsa.pub root@alpine-host  # 上传公钥
+    sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config  # 禁用密码
+
+‌格式说明‌
+
+    ‌代码块‌：灰色背景+等宽字体，可直接复制执行。
+    ‌加粗标题‌：关键步骤或高危操作提醒。
+    ‌时效性‌：适配 Alpine 3.20 的软件包命名及安全最佳实践（如默认禁用 root 登录需手动开启）。
