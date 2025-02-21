@@ -1,4 +1,14 @@
 #2025年2月22日
+WIN10下如何把键盘的caps lock键设置为ctrl键
+通过SharpKeys工具（推荐小白用户）
+
+markdownCopy Code
+1. 下载安装 [SharpKeys](https://github.com/randyrants/sharpkeys/releases)
+2. 点击「Add」→ 左侧选「Caps Lock」→ 右侧选「Left Ctrl」
+3. 依次点击「Write to Registry」→ 「OK」
+4. 重启系统生效
+
+##############################################################################################
 1.使用 WSL（Windows Subsystem for Linux）
 
 ‌特点‌：原生集成、性能高、资源占用极低
