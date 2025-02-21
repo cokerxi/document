@@ -4,6 +4,19 @@ apk add ncurses-terminfo-base  # 安装终端支持包
 echo 'echo -e "\e[?12h"' >> /etc/profile  # 全局启用光标闪烁
 reset  # 重启终端生效
 #########################################################################################
+一、基础安装（最小化环境）‌
+1. 更新仓库并安装 GCC
+
+bashCopy Code
+apk update                # 同步软件源
+apk add gcc musl-dev      # 安装 GCC 及标准库开发包
+
+2. 验证安装
+
+bashCopy Code
+gcc --version            # 输出版本信息（示例：gcc 13.2.0）
+echo 'int main(){return 0;}' | gcc -x c - && ./a.out  # 编译测试程序
+#########################################################################################
 Alpine Linux 安装 SSH 服务指南（2025 最新版）‌
 
 ‌适用版本：Alpine 3.20 | 当前时间：2025-02-22‌
