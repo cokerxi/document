@@ -78,7 +78,7 @@ wsl --import Alpine C:\wsl\alpine C:\Users\pc\alpine-rootfs.tar.gz
     这个命令不仅会安装 WSL，还会启用所有必要的组件，包括“虚拟机平台”。如果你已经安装了 WSL 但未启用 WSL2，这个命令也会帮助你完成启用。
     步骤 2: 检查 BIOS 设置
 
-    确保你的计算机 BIOS/UEFI 设置中启用了虚拟化技术（如 Intel VT-x 或 AMD-V）。这通常是默认启用的，但如果你之前禁用了它，你需要重启计算机并进入 BIOS/UEFI 设置来启用它。
+    确保你的计算机 BIOS/UEFI 设置中启用了虚拟化技术，开机F2，F7进入advanced mode，cpu configuration里找到虚拟化（如 Intel VT-x 或 AMD-V）。这通常是默认启用的，但如果你之前禁用了它，你需要重启计算机并进入 BIOS/UEFI 设置来启用它。
     步骤 3: 验证 WSL2 是否启用
 
     一旦你完成了上述步骤，你可以通过以下命令来验证 WSL2 是否已经成功启用：
