@@ -62,6 +62,9 @@ mkdir C:\wsl\alpine
 
 # 导入Alpine到WSL
 wsl --import Alpine C:\wsl\alpine C:\Users\pc\alpine-rootfs.tar.gz
+当前计算机配置不支持 WSL2。
+请启用“虚拟机平台”可选组件，并确保在 BIOS 中启用虚拟化。
+通过运行以下命令启用“虚拟机平台”: wsl.exe --install --no-distribution
 
 # 启动Alpine
 wsl -d Alpine
