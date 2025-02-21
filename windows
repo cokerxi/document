@@ -1,5 +1,5 @@
 #2025年2月22日
-使用 WSL（Windows Subsystem for Linux）
+1.使用 WSL（Windows Subsystem for Linux）
 
 ‌特点‌：原生集成、性能高、资源占用极低
 操作步骤：
@@ -14,16 +14,38 @@
 
     ‌安装最小化 Linux 发行版‌：
         推荐 ‌Alpine Linux‌（仅约 5MB）：
-
-        powershell
         命令行：wsl --install -d Alpine
         或使用 ‌Debian‌ 极简版（约 50MB）：
         命令行：wsl --install -d Debian
 
     ‌启动 Linux 环境‌：
         在开始菜单搜索安装的发行版（如 "Alpine"）并运行，首次启动会提示设置用户名/密码。
+2
+.# 查看已安装的发行版
+    wsl --list -v
+# 启动指定发行版
+    wsl -d Alpine
+    wsl -d Debian
+# 停止指定发行版
+    wsl --terminate Alpine
+# 查看所有 WSL 实例的资源占用
+wsl --system info
 
+#安装与配置步骤‌
+‌步骤 1：同时安装 Alpine 和 Debian‌
+# 安装 Alpine
+wsl --install -d Alpine
+# 安装 Debian
+wsl --install -d Debian
+    若提示错误，先更新 WSL 内核：
+    wsl --update
+‌步骤 2：按需定制‌
+‌需求‌ 	‌    Alpine 优化‌ 	‌                              Debian 优化‌
+‌GUI 支持‌ 	需手动配置 X Server（如 VcXsrv） 	          直接使用 WSLg（Windows 11 内置支持）
+‌开发环境‌ 	安装基础编译工具：apk add build-base 	          一键安装完整开发套件：apt install build-essential
+‌文件互访‌ 	直接访问 /mnt/c/Users 	                      同 Alpine
 
+#################################################################################################################################
 #从 Windows 访问 Mac
 开始——运行（Win＋R），输入：\\Mac名称或IP地址 回车即可。这个IP地址可以在“系统偏好设置——共享”那里找到。请求的用户名和密码即Mac的用户名和密码。
 看完之后，不知道各位是否已经掌握了相关的设置方法。如果你已熟练掌握，请把它普及开，为更多的朋友提供便利。
