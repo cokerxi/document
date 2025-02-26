@@ -1,3 +1,7 @@
+#2025年2月26日
+linux下将caps设置成ctrl
+在gnome桌面下运行gnome-tweaks,如果没有sudo apt install gnome-tweaks，点击键盘，其他布局进行设置
+
 #ubuntu 怎么修改@后面的那个名称
  sudo gedit /etc/hostname
 # vim 在powerbook上乱码
