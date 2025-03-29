@@ -1,3 +1,16 @@
+2025年03月29日23:39:39
+安装tmux
+1.安装homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    安装完成后，可以通过以下命令更新Homebrew：
+    brew update
+    定期使用 brew update && brew upgrade 命令来确保Homebrew及其安装的软件包都是最新版本‌2。
+‌搜索和安装软件包‌：
+    使用 brew search <软件包名称> 命令来查找所需的软件包。
+    使用 brew install <软件包名称> 命令来安装软件包。例如，安装 wget 可以使用：
+    brew install wget
+2.brew install tmux 
+
 #2025年03月12日21:19:52
 在 macOS 系统中，自 macOS Mojave 10.14 版本起，默认要求密码至少为四位数。若要设置一位数密码，可按以下步骤操作：
 打开 “终端”。可以通过在桌面左上角菜单点击 “前往”-“实用工具”-“终端” 来打开，也可以在 “启动台”-“其他” 文件夹中找到 “终端” 并打开。
