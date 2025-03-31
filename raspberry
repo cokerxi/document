@@ -1,7 +1,18 @@
 20250331
 终端不显示汉字
 sudo raspi-config,localisation,locale,zh_cn.utf8保存
-
+树莓派互换caps与ctrl
+sudo vi ~/.xmodmap
+添加一下内容
+remove Lock = Caps_Lock
+remove Control = Control_L
+keysym Control_L = Caps_Lock
+keysym Caps_Lock = Control_L
+add Lock = Caps_Lock
+add Control = Control_L
+保存，执行以下命令
+xmodmap ~/.xmodmap
+这样立刻生效
 ***************************************************************************
 #查看debian版本
     cat /etc/debian_version
