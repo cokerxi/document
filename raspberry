@@ -1,3 +1,8 @@
+20250331
+终端不显示汉字
+sudo raspi-config,localisation,locale,zh_cn.utf8保存
+
+***************************************************************************
 #查看debian版本
     cat /etc/debian_version
 #更新清华源
