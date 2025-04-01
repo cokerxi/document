@@ -1,3 +1,7 @@
+#2025年4月1日
+free -m 查看内存以M为单位
+htop 查看cpu几个核心以及内存
+
 #2025年2月26日
 linux下将caps设置成ctrl
 查看当前是否为gnome桌面
