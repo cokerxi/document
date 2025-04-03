@@ -1,3 +1,10 @@
+#vi的时候 用backspace删除字符 字符依然显示在屏幕上
+修改配置文件：找到vim的配置文件vimrc.tiny，通常位于/etc/vim/目录下。使用命令sudo vi /etc/vim/vimrc.tiny打开该文件。
+修改设置：将文件中的
+set compatible改为set nocompatible，
+并添加set backspace=2。这样设置后，Backspace键删除的字符就不会显示在屏幕上了
+
+
 #1 vim配置方案  
    在mac下配置配色方案
    ls /usr/share/vim/vim74/colors  //路径中的vim74因版本不同会有所不同，此命令查看配色方案
