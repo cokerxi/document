@@ -1,14 +1,99 @@
 ######################################
+20250410
+与多个远程库互相同步
+1.先删除关联名为origin的远程库（不删除也行）
+	git remote rm origin
+2.先关联github的远程库
+	git remote add github git@github.com:cokerxi/test
+  这时远程库叫github，而不叫origin
+3.再关联gitee远程库
+	git remote add gitee git@gitee.com:cokerxi/test
+  这时远程库就叫gitee
+4.现在用git remote -v查看远程库信息，就可以看到两个远程库
+5.推送到github就用git push github master
+  推送到gitee就用git push gitee master
+
+忽略某些文件时，需要在当前库下新建.gitignore文件
+其内容示例如下
+	#排除所有.开头的隐藏文件
+	.*
+	#排除所有.class文件
+	*.class
+	#不排除.gitignore和app.class
+	!.gitignore
+	!app.class
+######################################
+20250409
+创建并切换分支，git checkout -b dev
+	-b表示创建并切换
+	以上相当于两步git branch dev,
+		      git checkout dev
+	查看分支是否创建并切换成功
+	git branch
+合并分支
+	git checkout main
+	git merge dev
+删除分支
+	git branch -d dev
+查看分支应该只剩main分支
+	git branch
+使用switch创建切换分支
+	git switch -c dev
+使用switch切换分支
+	git switch main
+合并两个都已经修改过的分支
+	准备一个新的分支git checkout -b dev
+	修改readme的最后一行
+	在dev分支上提交，git a readme
+			 git cm
+	切换到main分支
+	修改readme
+	在main分支上提交，git a readme&&git cm
+	此时合并两个分支会出现冲突
+		git merge dev
+	可以直接查看readme的内容
+		cat readme
+	在main分支再次提交readme
+		git a && git cm
+	最后删除dev分支
+		git branch -d dev
+	用git log --graph可查看分支合并图
+合并分支时加上--no-ff参数可以用普通模式合并，合并后有历史分支可以看出曾经做过的合并，而fast forward合并就看不出来曾经的合并
+	git merge --no-ff -m "merge with no-ff" dev
+	git log --graph --pretty=online --abbrev-commit
+多人协作的工作模式通常是这样：
+ 1. 首先，可以尝试用git push origin <branch-name>推送自己的修改； 
+2. 如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并； 
+3. 如果合并有冲突，则解决冲突，并在本地提交；4. 没有冲突或者解决掉冲突后，再用git push origin <branch-name>推送就能成功！  如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream-to <branch-name> origin/<branch-name>。
+######################################
+20250408
+远程关联库
+git remote add origin git@github.com:cokerxi/test
+查看是否关联成功，git remote -v
+git branch -M main
+git push -u origin main
+查看远程库
+git remote -v
+删除远程库，不是物理删除远程库，而是删除本地与远程的连接
+git remote rm origin
+
+1.丢弃工作区的修改时用命令
+git checkout  file
+2.已经推送到暂缓区的修改分为两步
+第一步git reset HEAD file
+第二步git checkout file
+3.已经提交到版本库的用版本回退
+用git reset --hard HEAD^ 回退到上一个版本
+也可用git reset --hard （commit id）来退回上一个版本
+git reflog记录每一次命令和commit id
+删除文件跟添加文件操作一样，就是把add改为rm
+######################################
 2025年4月7日
 查看全局别称
 cat ~/.gitconfig
 ######################################
 2025年4月1日
 git config --global alias.cm 'commit -m "up"'
-
-######################################
-2025年3月31日
-git clone git@github.com:cokerxi/仓库名，仓库名后面不要带.git
 ######################################
 安装git
 ######################################
@@ -50,6 +135,7 @@ git全局变量
 ######################################
 1.查看已有的配置 
 git config --list
+git config --list |grep alias
 2. Git全局配置的用户名邮箱配置
   git config --global user.name “github’s Name”
   git config --global user.email “github@xx.com”
@@ -84,8 +170,7 @@ git config --global alias.s status
 git config --global alias.
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 ######################################
-从git克隆到本机，远程同步的步骤
-######################################
+从github克隆到本机，远程同步的步骤
 1.在github创建仓库
 2.将本机的ssh key 添加到github
         1.在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件
@@ -104,6 +189,8 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
         $ git push origin master
 5.如果在别的电脑上或者直接在github上修改文件以后，需要现在本机更新一下
 	$ git pull origin  master
+
+6.克隆私有仓库git clone git@github.com:cokerxi/仓库名，仓库名后面不要带.git
 ######################################
 #查看工作区与版本库的区别
 git diff HEAD -- file
