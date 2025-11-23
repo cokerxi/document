@@ -1,0 +1,3 @@
+20250401
+树莓派macbook402 将caps改成ctrl
+临时性的修改 setxkbmap -option ctrl:nocaps
