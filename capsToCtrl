@@ -1,3 +1,12 @@
+WIN10下如何把键盘的caps lock键设置为ctrl键
+通过SharpKeys工具（推荐小白用户）
+
+markdownCopy Code
+1. 下载安装 [SharpKeys](https://github.com/randyrants/sharpkeys/releases)
+2. 点击「Add」→ 左侧选「Caps Lock」→ 右侧选「Left Ctrl」
+3. 依次点击「Write to Registry」→ 「OK」
+4. 重启系统生效
+
 20250401
 树莓派macbook402 将caps改成ctrl
 临时性的修改 setxkbmap -option ctrl:nocaps
