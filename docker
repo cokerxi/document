@@ -5,7 +5,7 @@
 1.alist
 	启用自启动
 	/docker/alist	/opt/alist/data
-        /qb下载目录     /opt/alist/data/download
+        /选择nas下载目录     /opt/alist/data/download
 
 nasip:5244,admin,密码在容器日志中
 在个人资料修改密码
