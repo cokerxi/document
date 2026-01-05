@@ -1,0 +1,28 @@
+每次改设置先复制一个容器，保留原来的容器，设置成功后再删除旧容器
+2026年01月05日13:08:05
+
+通过代理服务器上网
+1.alist
+	启用自启动
+	/docker/alist	/opt/alist/data
+        /qb下载目录     /opt/alist/data/download
+
+nasip:5244,admin,密码在容器日志中
+在个人资料修改密码
+#存储，百度网盘，路径baidu，webdav-本地代理，令牌-点文档-存储-百度网盘里刷新令牌，然后复制粘贴到令牌
+
+#存储-本地存储，qb，根文件夹-/opt/alist/data/download，打开主页进入qb文件夹，新建离线下载，输入种子地址，就可以同时开启qbittorrent下载了,但是下载速度很慢，不如直接用qb下载速度快
+
+#通过cloud sync新增webdav，服务器地址nasip:5244/dav
+
+#docker exec -it alist /bin/sh  通过此命令可以进入alist终端
+
+
+2.qbittorrent
+自启动，通过web station设置门户-8080
+本地端口6999-6881 tcp/udp
+/docker/qbittorrent/config /config
+/本地磁盘 /downloads
+新增环境变量，PUID 1000，PGID 1000，TZ Asia/Shanghai
+门户选基于端口，http 8080
+http:ip:8080,admin,密码在日志，先设置中文，在webui设置密码
